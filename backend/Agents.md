@@ -9,6 +9,28 @@
 - Verrenne dich nicht in komplexen oder abstrakten Codestrukturen. Halte den Code sauber.
 - Halte Backend und Frontend getrennt. Änderungen sollen im passenden Ordner stattfinden.
 
+## Produkt- und Arbeitsprozess
+
+- Vor jedem neuen Feature wird zuerst gemeinsam geklärt, welches Feature gebaut werden soll.
+- Für jedes Feature wird eine kurze Todo-Liste angelegt und während der Umsetzung aktualisiert.
+- Jede Feature-Todo liegt im jeweiligen Feature-Ordner als `feature.todo.md`.
+- Die Feature-Todo enthält MVP-Ziel, offene Aufgaben, erledigte Aufgaben und bewusste Nicht-Ziele.
+- Die Feature-Todo wird bei jedem abgeschlossenen Schritt aktualisiert.
+- Vor der Implementierung wird ein sokratischer Dialog geführt: Stelle gezielte Fragen, damit Produktziel, Nutzerwert und Grenzen klar werden.
+- Formuliere Produktfragen so, dass der Nutzer entweder mit Ja/Nein antworten kann oder 2-3 konkrete Auswahlmöglichkeiten bekommt.
+- Stelle pro Antwort-Runde möglichst nur eine Frage.
+- Wenn eine freie Antwort nötig ist, halte die Frage kurz und erkläre, warum sie nötig ist.
+- Der Fokus liegt auf MVP als Most Valuable Product: Baue zuerst den kleinsten wertvollen Produktumfang, nicht nur den kleinsten technischen Umfang.
+- Kläre bei jedem Feature:
+  - Wer nutzt das Feature?
+  - Welches Problem löst es?
+  - Was ist der kleinste wertvolle Ablauf?
+  - Was gehört bewusst nicht in die erste Version?
+  - Welche Daten müssen gespeichert werden?
+  - Welche Fehlerfälle sind wichtig?
+- Erst wenn der MVP-Umfang klar ist, werden Tests und produktiver Code geschrieben.
+- Bei unklaren Produktentscheidungen nicht raten, sondern kurz und gezielt nachfragen.
+
 ## Projektstruktur
 
 - `backend` enthält die Express API.
@@ -36,6 +58,7 @@ Features sollen klar strukturiert sein.
 - `feature.model.ts` für Types, Datenstrukturen und Mongoose-Modelle.
 - `feature.zodSchema.ts` für Zod-Validierung.
 - `feature.docs.md` für Routendokumentation.
+- `feature.todo.md` für Feature-Aufgaben und MVP-Stand.
 
 ## Backend-Auth
 
@@ -54,8 +77,9 @@ Features sollen klar strukturiert sein.
 - Benutze `createAnswer`, um eine Antwort zurückzugeben.
 - Benutze `createError` mit `next` für Fehler als zentrales ErrorHandling. Kein doppeltes ErrorHandling.
 - Wenn du eine neue Route anlegst, erstelle eine Dokumentation als Markdown-Datei und aktualisiere sie bei jeder Veränderung der Route.
-- CORS verwendet die Frontend-Origin aus `FRONTEND_URL`.
+- CORS verwendet die Frontend-Origins aus `FRONTEND_URL`; mehrere lokale Origins werden kommasepariert eingetragen.
 - Helmet bleibt aktiv und ergänzt Clerk, ersetzt Clerk aber nicht.
+- Rate-Limiting darf im lokalen MVP in-memory sein; für Production oder mehrere Backend-Instanzen muss ein externer Store geplant werden.
 
 ## Frontend-Architektur
 
@@ -67,6 +91,7 @@ Features sollen klar strukturiert sein.
 - API-Requests verwenden `VITE_API_URL`.
 - Frontend-Env-Werte mit `VITE_` sind öffentlich. Keine Secrets im Frontend speichern.
 - UI-Code soll einfach, wartbar und komponentenorientiert bleiben.
+- Usertexte werden als normaler React-Text gerendert. Kein `dangerouslySetInnerHTML` für gespeicherte Userdaten.
 
 ## Dateien und Exporte
 

@@ -2,8 +2,12 @@
   --accent: #1f7a63;
   --bg: #f6f7f9;
   --border: #d9dee7;
+  --danger: #b42318;
+  --danger-soft: #fff1f0;
   --focus: rgba(31, 122, 99, 0.25);
+  --input-bg: #ffffff;
   --muted: #667085;
+  --soft: #f2f4f7;
   --surface: #ffffff;
   --text: #17202c;
 
@@ -21,7 +25,11 @@
   :root {
     --bg: #10141b;
     --border: #2d3645;
+    --danger: #ffb4ab;
+    --danger-soft: #3a1f22;
+    --input-bg: #111820;
     --muted: #9aa4b2;
+    --soft: #1d2531;
     --surface: #171d27;
     --text: #f2f5f8;
   }
@@ -36,7 +44,9 @@ body {
 }
 
 button,
-input {
+input,
+select,
+textarea {
   font: inherit;
 }
 

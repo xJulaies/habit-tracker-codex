@@ -30,4 +30,35 @@ describe("app", () => {
       message: "API works",
     });
   });
+
+  it("allows localhost frontend origins for CORS", async () => {
+    const { app } = await import("../src/app");
+
+    const localhostResponse = await request(app)
+      .options("/api/habits")
+      .set("Origin", "http://localhost:5173")
+      .set("Access-Control-Request-Method", "GET");
+    const loopbackResponse = await request(app)
+      .options("/api/habits")
+      .set("Origin", "http://127.0.0.1:5173")
+      .set("Access-Control-Request-Method", "GET");
+
+    expect(localhostResponse.headers["access-control-allow-origin"]).toBe(
+      "http://localhost:5173",
+    );
+    expect(loopbackResponse.headers["access-control-allow-origin"]).toBe(
+      "http://127.0.0.1:5173",
+    );
+  });
+
+  it("does not allow unknown origins for CORS", async () => {
+    const { app } = await import("../src/app");
+
+    const response = await request(app)
+      .options("/api/habits")
+      .set("Origin", "https://example.com")
+      .set("Access-Control-Request-Method", "GET");
+
+    expect(response.headers["access-control-allow-origin"]).toBeUndefined();
+  });
 });
