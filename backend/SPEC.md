@@ -36,6 +36,7 @@ Der aktuelle Schwerpunkt ist der Habit-Tracker-MVP. Eingeloggte User können eig
 - React
 - TypeScript
 - Clerk React SDK: `@clerk/clerk-react`
+- Lucide Icons: `lucide-react`
 - ESLint
 
 ## Backend-Einstiegspunkt
@@ -50,8 +51,10 @@ Der aktuelle Schwerpunkt ist der Habit-Tracker-MVP. Eingeloggte User können eig
 
 - `frontend/index.html` ist der HTML-Einstiegspunkt.
 - `frontend/src/main.tsx` initialisiert React und den `ClerkProvider`.
-- `frontend/src/App.tsx` enthält das erste Habit-Dashboard mit Clerk-Login.
+- `frontend/src/App.tsx` enthält die App-Shell mit Clerk-Login.
+- Das Habit-Dashboard liegt komponentenbasiert unter `frontend/src/features/habit-dashboard`.
 - Das Dashboard lädt eigene Habits, erstellt Habits, zeigt Details/Stats und setzt Check-ins für heute/gestern.
+- Das aktuelle Design ist mobile-first, Premium Dark und nutzt sparsam `lucide-react` Icons.
 - Das Frontend wird mit Vite gestartet.
 
 ## Auth-Stand
@@ -225,6 +228,10 @@ Alle `VITE_`-Werte sind im Browser sichtbar und dürfen keine Secrets enthalten.
 - Clerk-Login im Frontend funktioniert.
 - Das Frontend sendet Clerk Bearer Tokens an die Habit API.
 - Das Habit-Dashboard ist an Liste, Create, Detail, Delete, Check-ins und Stats angebunden.
+- Das Frontend ist in eine mobile-first Premium-Dark-Komponentenstruktur überführt.
+- Mobile nutzt iconbasierte Bottom Tabs für `Übersicht`, `Erstellen` und `Profil`; Desktop nutzt ein eigenes Dashboard-Layout.
+- Mobile Tab 1 zeigt Begrüßung und Habit-Library. Habit-Auswahl öffnet eine Detailansicht mit Stats und Check-ins.
+- Der Profil-Tab nutzt aktuell Clerk-Daten und benötigt keine eigene Backend-Route.
 - Habit Tracker MVP ist fachlich geplant und als erster Fullstack-Slice umgesetzt.
 
 ## Noch offen

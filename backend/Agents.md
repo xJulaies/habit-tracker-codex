@@ -91,6 +91,7 @@ Features sollen klar strukturiert sein.
 - API-Requests verwenden `VITE_API_URL`.
 - Frontend-Env-Werte mit `VITE_` sind öffentlich. Keine Secrets im Frontend speichern.
 - UI-Code soll einfach, wartbar und komponentenorientiert bleiben.
+- Frontend-Layouts werden mobile-first geplant und danach für Tablet/Desktop erweitert.
 - Usertexte werden als normaler React-Text gerendert. Kein `dangerouslySetInnerHTML` für gespeicherte Userdaten.
 
 ## Dateien und Exporte

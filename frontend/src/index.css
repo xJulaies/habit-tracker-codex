@@ -1,46 +1,47 @@
 :root {
-  --accent: #1f7a63;
-  --bg: #f6f7f9;
-  --border: #d9dee7;
-  --danger: #b42318;
-  --danger-soft: #fff1f0;
-  --focus: rgba(31, 122, 99, 0.25);
-  --input-bg: #ffffff;
-  --muted: #667085;
-  --soft: #f2f4f7;
-  --surface: #ffffff;
-  --text: #17202c;
+  --accent: #8ee4c8;
+  --bg: #080a0f;
+  --border: #273040;
+  --danger: #ff9b9b;
+  --danger-soft: #30191f;
+  --focus: rgba(142, 228, 200, 0.22);
+  --input-bg: #0f141d;
+  --muted: #9aa7b8;
+  --shadow: rgba(0, 0, 0, 0.34);
+  --surface: #101620;
+  --surface-hover: #182232;
+  --surface-strong: #141c29;
+  --text: #f4f7fb;
 
-  color: var(--text);
-  font: 16px/1.5 system-ui, "Segoe UI", Roboto, sans-serif;
-  color: var(--text);
   background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 Inter, ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #10141b;
-    --border: #2d3645;
-    --danger: #ffb4ab;
-    --danger-soft: #3a1f22;
-    --input-bg: #111820;
-    --muted: #9aa4b2;
-    --soft: #1d2531;
-    --surface: #171d27;
-    --text: #f2f5f8;
-  }
-}
-
 #root {
   min-height: 100vh;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
 body {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    var(--bg);
+  background-size: 48px 48px;
   margin: 0;
+  min-width: 320px;
 }
 
 button,
@@ -50,22 +51,36 @@ textarea {
   font: inherit;
 }
 
+button,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
 h1 {
-  font-size: 40px;
-  line-height: 1.1;
+  font-size: 34px;
+  line-height: 1.06;
   margin: 0;
 }
 
 h2 {
-  font-size: 24px;
-  line-height: 1.2;
+  font-size: 22px;
+  line-height: 1.18;
   margin: 0;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 p {
   margin: 0;
 }
 
-* {
-  box-sizing: border-box;
+@media (min-width: 760px) {
+  h1 {
+    font-size: 44px;
+  }
 }
