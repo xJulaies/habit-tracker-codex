@@ -13,6 +13,8 @@ Aktuell umgesetzt:
 
 - Login und Session-Handling mit Clerk.
 - Habit-Dashboard im Frontend.
+- Mobile-first Premium-Dark-Dashboard mit iconbasierter Navigation.
+- Responsive eingebettete Clerk-Login-Ansicht.
 - Eigene Habits laden und anzeigen.
 - Habits erstellen, bearbeiten und loeschen.
 - Maximal 5 Habits pro User im MVP.
@@ -56,6 +58,7 @@ Frontend:
 - React
 - TypeScript
 - Clerk React SDK
+- Lucide Icons
 - ESLint
 
 ## Projektstruktur
@@ -78,6 +81,10 @@ backend-api-codex/
 
 Das Backend ist featurebasiert aufgebaut. Der aktuelle Fachbereich liegt unter
 `backend/src/features/habit`.
+
+Das Frontend ist ebenfalls featureorientiert gegliedert. Das Habit-Dashboard
+liegt unter `frontend/src/features/habit-dashboard`; Design-Entscheidungen und
+Review-Fixes stehen in `frontend/src/features/dashboard-design/dashboard-design.todo.md`.
 
 ## Voraussetzungen
 
@@ -188,10 +195,14 @@ npm audit --audit-level=moderate
 ## Sicherheit und aktuelle Grenzen
 
 - Clerk schuetzt die Authentifizierung.
+- Der Clerk Sign-in laeuft im Frontend eingebettet mit Hash-Routing und Redirect
+  zurueck zur App.
 - Alle Habit-Routen pruefen explizit `requireAuth`.
 - Userdaten werden immer nach Clerk User ID gefiltert.
 - Fremde oder nicht vorhandene Habits geben `404` zurueck.
 - Usertexte werden als Rohtext gespeichert und in React normal gerendert.
+- Dashboard-Renderfehler werden im Frontend sichtbar abgefangen, statt als
+  weisse Seite zu enden.
 - Keine Secrets im Frontend speichern.
 - Das aktuelle Rate-Limit ist in-memory und fuer den lokalen MVP geeignet.
   Fuer Production oder mehrere Backend-Instanzen sollte ein externer Store

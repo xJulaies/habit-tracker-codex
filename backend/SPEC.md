@@ -55,6 +55,8 @@ Der aktuelle Schwerpunkt ist der Habit-Tracker-MVP. Eingeloggte User können eig
 - Das Habit-Dashboard liegt komponentenbasiert unter `frontend/src/features/habit-dashboard`.
 - Das Dashboard lädt eigene Habits, erstellt Habits, zeigt Details/Stats und setzt Check-ins für heute/gestern.
 - Das aktuelle Design ist mobile-first, Premium Dark und nutzt sparsam `lucide-react` Icons.
+- Der Clerk Sign-in ist als eingebettete responsive Ansicht umgesetzt und nutzt Hash-Routing mit Redirect zurück zur App.
+- Das Frontend zeigt Standard-Statusmeldungen wie `Habits geladen` nicht mehr dauerhaft an; echte Fehler bleiben sichtbar.
 - Das Frontend wird mit Vite gestartet.
 
 ## Auth-Stand
@@ -63,6 +65,8 @@ Der aktuelle Schwerpunkt ist der Habit-Tracker-MVP. Eingeloggte User können eig
 - Das Frontend nutzt `@clerk/clerk-react`.
 - Der Clerk Publishable Key wird über `VITE_CLERK_PUBLISHABLE_KEY` geladen.
 - Benutzer-Login über Clerk funktioniert im aktuellen Frontend.
+- Während Clerk lädt, zeigt das Frontend einen eigenen Loading-State.
+- Dashboard-Renderfehler werden im Frontend sichtbar abgefangen, statt in einer weißen Seite zu enden.
 - Email und Google werden über das Clerk Dashboard konfiguriert.
 - Das Backend nutzt `@clerk/express`.
 - Die globale Clerk-Middleware liegt in `backend/src/middlewares/clerkAuth.middleware.ts`.
@@ -232,6 +236,8 @@ Alle `VITE_`-Werte sind im Browser sichtbar und dürfen keine Secrets enthalten.
 - Mobile nutzt iconbasierte Bottom Tabs für `Übersicht`, `Erstellen` und `Profil`; Desktop nutzt ein eigenes Dashboard-Layout.
 - Mobile Tab 1 zeigt Begrüßung und Habit-Library. Habit-Auswahl öffnet eine Detailansicht mit Stats und Check-ins.
 - Der Profil-Tab nutzt aktuell Clerk-Daten und benötigt keine eigene Backend-Route.
+- Signed-out nutzt eine eigene Hero-Ansicht und eine responsive eingebettete Clerk-Login-Karte.
+- Frontend-Standardstatusmeldungen werden ausgeblendet; Fehlermeldungen bleiben als Statuszeile sichtbar.
 - Habit Tracker MVP ist fachlich geplant und als erster Fullstack-Slice umgesetzt.
 
 ## Noch offen

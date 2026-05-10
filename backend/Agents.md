@@ -93,6 +93,8 @@ Features sollen klar strukturiert sein.
 - UI-Code soll einfach, wartbar und komponentenorientiert bleiben.
 - Frontend-Layouts werden mobile-first geplant und danach für Tablet/Desktop erweitert.
 - Usertexte werden als normaler React-Text gerendert. Kein `dangerouslySetInnerHTML` für gespeicherte Userdaten.
+- Auth- und Dashboard-Fehler im Frontend sollen sichtbar abgefangen werden, damit keine weiße Seite ohne Hinweis entsteht.
+- Temporäre Status- oder Debug-Texte dürfen nicht dauerhaft in der UI stehen; sichtbare Statusmeldungen sollen Nutzerwert haben.
 
 ## Dateien und Exporte
 

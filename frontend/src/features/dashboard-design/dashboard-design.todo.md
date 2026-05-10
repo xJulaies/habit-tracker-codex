@@ -109,3 +109,4 @@ Workflows, ohne neue Produktlogik oder neue Backend-Routen einzuführen.
 - [x] Clerk Sign-in für iPad/Tablet vergrößert: Formular, Main-Bereich und Footer nutzen die verfügbare Breite und Höhe besser.
 - [x] Clerk Sign-in auf Mobile als gleichmäßiges responsives Login-Fenster zentrieren.
 - [x] Clerk Login-Flow mit Loading-State, Hash-Routing, Redirects und Dashboard-Fehleransicht absichern.
+- [x] Dauerhafte Standard-Statuszeile wie `Habits geladen` aus Mobile und Desktop entfernen.
