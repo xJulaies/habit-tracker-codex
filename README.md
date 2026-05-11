@@ -195,7 +195,7 @@ npm audit --audit-level=moderate
 ## Sicherheit und aktuelle Grenzen
 
 - Clerk schuetzt die Authentifizierung.
-- Der Clerk Sign-in laeuft im Frontend eingebettet mit Hash-Routing und Redirect
+- Der Clerk Sign-in laeuft im Frontend eingebettet mit Virtual-Routing und Redirect
   zurueck zur App.
 - Alle Habit-Routen pruefen explizit `requireAuth`.
 - Userdaten werden immer nach Clerk User ID gefiltert.

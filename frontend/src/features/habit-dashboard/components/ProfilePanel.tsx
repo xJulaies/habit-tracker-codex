@@ -34,7 +34,7 @@ export function ProfilePanel() {
       <button
         type="button"
         className="danger-button icon-button full-width"
-        onClick={() => void signOut()}
+        onClick={() => void signOut({ redirectUrl: "/" })}
       >
         <LogOut size={17} strokeWidth={2.1} />
         <span>Abmelden</span>

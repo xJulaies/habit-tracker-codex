@@ -55,7 +55,7 @@ Der aktuelle Schwerpunkt ist der Habit-Tracker-MVP. Eingeloggte User können eig
 - Das Habit-Dashboard liegt komponentenbasiert unter `frontend/src/features/habit-dashboard`.
 - Das Dashboard lädt eigene Habits, erstellt Habits, zeigt Details/Stats und setzt Check-ins für heute/gestern.
 - Das aktuelle Design ist mobile-first, Premium Dark und nutzt sparsam `lucide-react` Icons.
-- Der Clerk Sign-in ist als eingebettete responsive Ansicht umgesetzt und nutzt Hash-Routing mit Redirect zurück zur App.
+- Der Clerk Sign-in ist als eingebettete responsive Ansicht umgesetzt und nutzt Virtual-Routing mit Redirect zurück zur App.
 - Das Frontend zeigt Standard-Statusmeldungen wie `Habits geladen` nicht mehr dauerhaft an; echte Fehler bleiben sichtbar.
 - Das Frontend wird mit Vite gestartet.
 

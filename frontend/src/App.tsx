@@ -95,7 +95,7 @@ function App() {
                 <SignIn
                   fallbackRedirectUrl="/"
                   forceRedirectUrl="/"
-                  routing="hash"
+                  routing="virtual"
                   signUpFallbackRedirectUrl="/"
                   signUpForceRedirectUrl="/"
                   appearance={{
