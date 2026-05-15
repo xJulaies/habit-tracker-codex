@@ -38,9 +38,15 @@ Bewusst nicht Teil von Version 1:
 
 ## Screenshots
 
-- [Desktop Dashboard](screenshots/dashboard.png)
-- [Mobile Dashboard](screenshots/dashboard_mobile.png)
-- [Mobile Habit-Erstellung](screenshots/habit_erstellen_mobile.png)
+### Desktop Dashboard
+
+<img src="./screenshots/dashboard.png" alt="Desktop Dashboard" width="100%">
+
+### Mobile Ansichten
+
+| Dashboard | Habit-Erstellung |
+| --- | --- |
+| <img src="./screenshots/dashboard_mobile.png" alt="Mobile Dashboard" width="320"> | <img src="./screenshots/habit_erstellen_mobile.png" alt="Mobile Habit-Erstellung" width="320"> |
 
 ## Tech Stack
 
