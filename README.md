@@ -36,6 +36,12 @@ Bewusst nicht Teil von Version 1:
 - Habit-Icons.
 - User-Zeitzonen.
 
+## Screenshots
+
+- [Desktop Dashboard](screenshots/dashboard.png)
+- [Mobile Dashboard](screenshots/dashboard_mobile.png)
+- [Mobile Habit-Erstellung](screenshots/habit_erstellen_mobile.png)
+
 ## Tech Stack
 
 Backend:
